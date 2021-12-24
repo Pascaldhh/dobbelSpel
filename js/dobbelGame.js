@@ -7,6 +7,7 @@ const endScore = document.querySelector('.overlay-inner #end-score');
 let randomNum;
 let sum = 0;
 
+// array met alle beschikbare classes voor dobbelsteen
 const dobbelClass = [
     '',
     'one',

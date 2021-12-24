@@ -4,8 +4,8 @@
             <p id="end-score"></p>
             <p>Wil je je geluk nog eens testen? Klik op speel opnieuw!</p>
             <div class="btn_container">
-                <a href="/" class="btn">Home</a>
-                <a href="?page=spel" class="btn">Speel opnieuw!</a>
+                <a href="/dobbelSpel/" class="btn">Home</a>
+                <a href="/dobbelSpel/?page=spel" class="btn">Speel opnieuw!</a>
             </div>
         </div>
     </div>

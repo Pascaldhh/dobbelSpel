@@ -7,6 +7,7 @@ class DB
     private $pass = '';
     private $name = 'dobbel_game';
 
+    // pdo database connectie maken
     public function __construct()
     {
         try {
@@ -17,6 +18,7 @@ class DB
         }
     }
 
+    // read functie resultaten uit database te halen
     public function Read($table, $columns = '*', $where = '1', $value)
     {
         $rows = [];
@@ -32,6 +34,7 @@ class DB
         return $rows;
     }
 
+    // create functie om dingen in database te stoppen
     public function Create($table, $columns, $values)
     {
         $query = sprintf('INSERT INTO %1$s (%2$s) VALUES (%3$s)', $table, $columns, $values);
