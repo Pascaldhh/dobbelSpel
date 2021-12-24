@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* Roboto font | Google fonts */
+:root {
+    --clr-highscore:#5757A4;
+    --clr-btn: #2B2B7A;
+    --clr-btn-active: #1e1e55;
+    --clr-inputfield: #8484FF;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(to right top, #0f0f25, #11132d, #141635, #17183e, #1b1b46);
+    color: white;
+    margin: 0;
+}
+header {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-left: -10px;
+}
+
+.container {
+    min-height: 100vh;
+    max-width: 1330px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 60px;
+}
+.info {
+    padding: 10px;
+    flex: .5;
+}
+.info .main-text {
+    margin-top: 25px;
+    line-height: 1.6;
+}
+.info .form-group {
+    margin-top: 75px;
+}
+.info p:last-child {
+    margin-top: 10px;
+}
+.highscore {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 10px;
+    flex: .4;
+    text-align: center;
+    margin-top: 75px;
+}
+.highscore .inner {
+    background-color: var(--clr-highscore);
+    width: 80%;
+    min-width: 300px;
+    border-radius: .7vmin;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px 0 60px 0;
+}
+.highscore p:last-child {
+    margin-top: 5px;
+}
+.btn {
+    all:unset;
+    cursor: pointer;
+    background-color: var(--clr-btn);
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 50px;
+    border-radius: .9vmin;
+    transition: .5s background-color ease;
+}
+.btn:hover {
+    background-color: var(--clr-btn-active);
+}
+.dobbelen_maar {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#name {
+    background-color: var(--clr-inputfield);
+    border: 2px solid white;
+    border-radius: 3px;
+    padding: 5px;
+    width: 70%;
+    min-width: 275px;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+#name::placeholder {
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.dobbel_container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    position: relative;
+    z-index: -1;
+}
+#result {
+    margin-top: 75px;
+    text-align: center;
+}
+.btn_container {
+    display: flex;
+    justify-content: center;
+}
+#trowD {
+    margin: 50px 0;
+}
+.d-none {
+    display: none;
+}
+.op-0{
+    opacity: 0;
+}
+.overlay {
+    z-index: 200;
+}
+.overlay-inner {
+    border-radius: 2vmin;
+    text-align: center;
+    position: fixed;
+    max-width: 600px;
+    width: 100%;
+    min-width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--clr-highscore);
+    padding: 20px;
+}
+.overlay-inner p {
+    margin-top: 20px;
+}
+.overlay-inner a {
+    display: inline-block;
+    margin-top: 50px;
+}
+.overlay-inner .btn_container {
+    gap: 20px;
+}
+.overlay::before {
+    content:'';
+    position: fixed;
+    inset:0;
+    background-color: rgba(37, 37, 37, 0.473);
+}
+@media (min-width:750px) {
+    .content {
+        flex-direction: row;
+    }
+    .highscore {
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+}
+
+
+
+
+
+
+/* Style Dobbelsteen */
+.dobbelsteen {
+    width:200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 3vmin;
+    position: relative;
+    transition: .3s opacity ease;
+}
+.eye {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+/* style dobbelsteen 1, word getriggered door class one */
+.dobbelsteen.one .eye1 {
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.dobbelsteen.one .eye2,.dobbelsteen.one .eye3, .dobbelsteen.one .eye4, .dobbelsteen.one .eye5, .dobbelsteen.one .eye6 { display: none; }
+
+/* style dobbelsteen 2, word getriggered door class two */
+.dobbelsteen.two .eye1 {
+    right: 20%;
+    top: 20%;
+}
+.dobbelsteen.two .eye2 {
+    left: 20%;
+    bottom: 20%;
+}
+.dobbelsteen.two .eye3, .dobbelsteen.two .eye4, .dobbelsteen.two .eye5, .dobbelsteen.two .eye6 { display: none; }
+
+/* style dobbelsteen 3, word getriggered door class three */
+.dobbelsteen.three .eye1 {
+    left: 20%;
+    top: 20%;
+}
+.dobbelsteen.three .eye2 {
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.dobbelsteen.three .eye3 {
+    right: 20%;
+    bottom: 20%;
+}
+.dobbelsteen.three .eye4, .dobbelsteen.three .eye5, .dobbelsteen.three .eye6 { display: none; }
+
+/* style dobbelsteen 4, word getriggered door class four */
+.dobbelsteen.four .eye1 {
+    left: 15%;
+    top: 15%;
+}
+.dobbelsteen.four .eye2 {
+    right: 15%;
+    top: 15%;
+}
+.dobbelsteen.four .eye3 {
+    left: 15%;
+    bottom: 15%;
+}
+.dobbelsteen.four .eye4 {
+    right: 15%;
+    bottom: 15%;
+}
+.dobbelsteen.four .eye5, .dobbelsteen.four .eye6 { display: none; }
+
+/* style dobbelsteen 5, word getriggered door class five */
+.dobbelsteen.five .eye1 {
+    left: 15%;
+    top: 15%;
+}
+.dobbelsteen.five .eye2 {
+    right: 15%;
+    top: 15%;
+}
+.dobbelsteen.five .eye3 {
+    left: 15%;
+    bottom: 15%;
+}
+.dobbelsteen.five .eye4 {
+    right: 15%;
+    bottom: 15%;
+}
+.dobbelsteen.five .eye5 {
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.dobbelsteen.five .eye6 { display: none; }
+
+/* style dobbelsteen 6, word getriggered door class six */
+.dobbelsteen.six .eye1 {
+    left: 15%;
+    top: 15%;
+}
+.dobbelsteen.six .eye2 {
+    right: 15%;
+    top: 15%;
+}
+.dobbelsteen.six .eye3 {
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+}
+.dobbelsteen.six .eye4 {
+    top: 50%;
+    right: 15%;
+    transform: translateY(-50%);
+}
+.dobbelsteen.six .eye5 {
+    left: 15%;
+    bottom: 15%;
+}
+.dobbelsteen.six .eye6 {
+    right: 15%;
+    bottom: 15%;
+}
